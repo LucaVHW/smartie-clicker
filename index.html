@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smartie clicker</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+  <style media="screen">
+    .flex {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .margin-left {
+      margin-left: 20px;
+    }
+    .flextwo{
+      display: flex;
+      justify-content: space-around;
+    }
+  </style>
+  <script src="script.js"></script>
+  <div class="columns is-fluid is-multiline">
+    <div class="column is-one-third has-background-light">
+      <br>
+      <button class="margin-left button is-dark" onclick="save()">Save</button>
+      <button class="button is-dark" onclick="load()">Load</button>
+      <br>
+      <br>
+      <br>
+      <table class="table is-light margin-left has-background-light">
+        <tr>
+          <td>
+            <p id="currentMultiplier">Your current Multiplier is x1</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="amountAutoClick">You own 0 Auto Clickers.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="amountFactory">You own 0 Factories</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="column is-one-third has-background-light flex">
+      <br>
+      <p id="cookiespersecond">You are gaining 0 Smarties per/s</p>
+      <br>
+      <a onclick="add()"><img style="width:200px;" src="images/smartie.png"></a>
+      <br>
+      You got: <input type="text" id="text" disabled style="text-align:center;" value="0"> Smarties.
+    </div>
+    <div class="column is-one-third has-background-light flex">
+      <br>
+      <p id="amountMultiplier">Multiplier Upgrade x2</p>
+      <br>
+      <button class="button is-dark" onclick="buyMultiplier()"><span id="amountMultiplier2">x2</span></button>
+      <br>
+      <p id="costMultiplier">200 Smarties</p>
+    </div>
+    <div class="column is-one-third has-background-light">
+
+    </div>
+    <div class="column is-one-third has-background-light flextwo">
+      <div class="has-text-centered">
+        <br>
+        <p>Buy 1 Auto Clicker</p>
+        <br>
+        <button onclick="buyAutoClick()" class="button is-dark"><i class="fas fa-mouse-pointer"></i></button>
+        <br><br>
+        <p id="costAutoClick">12 Smarties</p>
+      </div>
+      <br>
+      <div class="has-text-centered" style="width:156px;">
+        <br>
+        <p>Buy 1 Factory</p>
+        <br>
+        <button class="button is-dark" onclick="buyFactory()"><i class="fas fa-industry"></i></button>
+        <br><br>
+        <p id="costFactory">15 Smarties</p>
+      </div>
+    </div>
+    <div class="column is-one-third has-background-light">
+
+    </div>
+  </div>
+
+</body>
+
+</html>
