@@ -39,15 +39,19 @@ function save() {
 }
 
 function load() {
-  smartiecount = localStorage.getItem("smartiecount");
-  smartiecount = parseInt(smartiecount);
-  autoClick = localStorage.getItem("autoClick");
-  autoClick = parseInt(autoClick);
-  factories = localStorage.getItem("factories");
-  factories = parseInt(factories);
-  multiplier = localStorage.getItem("multiplier");
-  multiplier = parseInt(multiplier);
-  update();
+  if (localStorage.getItem("smartiecount") === null) {
+    alert("Nothing to load!");
+  } else {
+    smartiecount = localStorage.getItem("smartiecount");
+    smartiecount = parseInt(smartiecount);
+    autoClick = localStorage.getItem("autoClick");
+    autoClick = parseInt(autoClick);
+    factories = localStorage.getItem("factories");
+    factories = parseInt(factories);
+    multiplier = localStorage.getItem("multiplier");
+    multiplier = parseInt(multiplier);
+    update();
+  }
 }
 
 function buyAutoClick() {
