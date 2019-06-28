@@ -83,7 +83,7 @@ function reset(){
 }
 else
 {
-    // They clicked no
+    // Nothing happens
 }
 }
 
