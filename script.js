@@ -47,12 +47,7 @@ function load() {
   factories = parseInt(factories);
   multiplier = localStorage.getItem("multiplier");
   multiplier = parseInt(multiplier);
-  if ("smartiecount" in localStorage) {
-    update();
-} else {
-  alert("Nothing to load!")
-  window.location = 'index.html';
-}
+  update();
 }
 
 function buyAutoClick() {
