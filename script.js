@@ -47,7 +47,12 @@ function load() {
   factories = parseInt(factories);
   multiplier = localStorage.getItem("multiplier");
   multiplier = parseInt(multiplier);
-  update();
+  if ("smartiecount" in localStorage) {
+    update();
+} else {
+  alert("Nothing to load!")
+  window.location = 'index.html';
+}
 }
 
 function buyAutoClick() {
@@ -71,3 +76,22 @@ function buyMultiplier() {
     update();
   }
 }
+function reset(){
+  if (window.confirm('Are you sure you want to reset?'))
+{
+  localStorage.clear();
+  multiplier = 1;
+  smartiecount = 0;
+  autoClick = 0;
+  factories = 0;
+  update();
+}
+else
+{
+    // They clicked no
+}
+}
+
+window.onbeforeunload = function () {
+    save();
+};
